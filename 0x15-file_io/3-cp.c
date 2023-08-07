@@ -6,10 +6,10 @@ char *create_buffer(char *file);
 void close_file(int fd);
 
 /**
- * create_buffer - Allocates 1024 bytes for a buffer.
- * @file: The name of the file buffer is storing chars for.
+ * create_buffer - Allocates 1024 bytes for the buffer.
+ * @file: The name of the file
  *
- * Return: A pointer to the newly-allocated buffer.
+ * Return: A pointer.
  */
 char *create_buffer(char *file)
 {
@@ -28,16 +28,16 @@ char *create_buffer(char *file)
 }
 
 /**
- * close_file - Closes file descriptors.
+ * close_file - Closes file.
  * @fd: The file descriptor to be closed.
  */
 void close_file(int fd)
 {
-	int c;
+	int t;
 
-	c = close(fd);
+	t = close(fd);
 
-	if (c == -1)
+	if (t == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -51,14 +51,14 @@ void close_file(int fd)
  *
  * Return: 0 on success.
  *
- * Description: If the argument count is incorrect - exit code 97.
- * If file_from does not exist or cannot be read - exit code 98.
- * If file_to cannot be created or written to - exit code 99.
- * If file_to or file_from cannot be closed - exit code 100.
+ * Description: If the argument count is incorrect - exit code 97 - EOF
+ * If file_from does not exist or cannot be read - exit code end proc
+ * If file_to cannot be created or written to - exit code 99 end proc
+ * If file_to or file_from cannot be closed - exit code 100 at the end.
  */
 int main(int argc, char *argv[])
 {
-	int from, to, r, w;
+	int from, to, re, w;
 	char *buffer;
 
 	if (argc != 3)
@@ -69,11 +69,11 @@ int main(int argc, char *argv[])
 
 	buffer = create_buffer(argv[2]);
 	from = open(argv[1], O_RDONLY);
-	r = read(from, buffer, 1024);
+	re = read(from, buffer, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (from == -1 || r == -1)
+		if (from == -1 || re == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(to, buffer, r);
+		w = write(to, buffer, re);
 		if (to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -90,10 +90,10 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(from, buffer, 1024);
+		re = read(from, buffer, 1024);
 		to = open(argv[2], O_WRONLY | O_APPEND);
 
-	} while (r > 0);
+	} while (re > 0);
 
 	free(buffer);
 	close_file(from);
