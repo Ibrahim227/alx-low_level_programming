@@ -17,7 +17,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	{
 		act_val = prior_val >> k;
 		if (act_val & 1)
-			n_vall++;
+			n_val++;
 
 	}
 
