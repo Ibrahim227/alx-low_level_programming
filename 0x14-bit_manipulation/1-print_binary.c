@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 	int z, next = 0;
 	unsigned long int actual_val;
 
-	for (z = 63; z >= 0; z++)
+	for (z = 63; z >= 0; z--)
 	{
 		actual_val = n >> z;
 
