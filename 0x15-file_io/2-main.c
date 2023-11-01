@@ -20,4 +20,3 @@ int main(int ac, char **av)
     printf("-> %i)\n", res);
     return (0);
 }
-
