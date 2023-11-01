@@ -11,4 +11,7 @@ ssize_t read_textfile(const char *filename, size_t let);
 int _putchar(char c);
 int append_text_to_file(const char *filename, char *txt_content);
 int create_file(const char *filename, char *txt_content);
+int main(int argc, char *argv[]);
+void error_file(int file_fromsrc, int file_todest, char *argv[]);
+
 #endif
