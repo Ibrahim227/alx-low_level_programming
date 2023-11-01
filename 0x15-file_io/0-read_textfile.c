@@ -21,12 +21,12 @@ ssize_t read_textfile(const char *filename, size_t let)
 	if (fd == -1)
 		return (0);
 
-	buf = malloc(sizeof(char) * (letters));
+	buf = malloc(sizeof(char) * (let));
 	if (!buf)
 		return (0);
 
-	nrd = read(fd, buf, letters);
-	nwr = write(STDOUT_FILENO, buf, nd);
+	nd = read(fd, buf, let);
+	nr = write(STDOUT_FILENO, buf, nd);
 
 	close(fd);
 
