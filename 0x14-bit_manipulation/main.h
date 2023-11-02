@@ -10,6 +10,6 @@ unsigned long int _pow(unsigned int baseint, unsigned int power);
 int get_bit(unsigned long int num, unsigned int index);
 int set_bit(unsigned long int *num, unsigned int index);
 int clear_bit(unsigned long int *num, unsigned int index);
-
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
 
 #endif
