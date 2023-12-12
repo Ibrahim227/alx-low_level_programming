@@ -7,5 +7,5 @@
 */
 void _puts(char *s)
 {
-return;
+return(0);
 }
