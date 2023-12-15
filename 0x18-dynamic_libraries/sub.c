@@ -2,10 +2,10 @@
 #include<stdio.h>
 
 /**
-* sub - add operation
+* sub - sub operation
 * @a: integer
 * @b: ineteger
-* Return: sum
+* Return: subtraction result
 */
 
 int sub(int a, int b)
