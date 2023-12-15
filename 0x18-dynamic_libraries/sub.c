@@ -1,4 +1,5 @@
 #include<stdlib.h>
+#include<stdio.h>
 
 /**
 * sub - add operation
