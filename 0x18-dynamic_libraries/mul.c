@@ -2,13 +2,13 @@
 #include<stdio.h>
 
 /**
-* mul - add operation
+* mul - multiplication operation
 * @a: integer
 * @b: ineteger
-* Return: sum
+* Return: multiply
 */
 
-int add(int a, int b)
+int mul(int a, int b)
 {
 return (a * b);
 }
