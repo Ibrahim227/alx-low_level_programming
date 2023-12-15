@@ -1,10 +1,10 @@
 #include<stdio.h>
 
 /**
-* div - add operation
+* div - division operation
 * @a: integer
 * @b: ineteger
-* Return: sum
+* Return: division
 */
 
 int div(int a, int b)
