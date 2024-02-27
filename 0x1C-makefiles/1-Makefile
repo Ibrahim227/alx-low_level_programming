@@ -3,4 +3,4 @@ CC := ${CC}
 SRC := $(wildcard *.c)
 
 all: ${SRC}
-	${CC} main.c  -o school
+	${CC} ${SRC} -o school
