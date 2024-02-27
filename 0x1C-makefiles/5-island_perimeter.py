@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def island_perimeter(grid):
     """FUNction island perimeter"""
-     width = len(grid[0])
+    width = len(grid[0])
     height = len(grid)
     edges = 0
     size = 0
