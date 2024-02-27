@@ -11,8 +11,3 @@ $(NAME): $(OBJ)
 
 %.o= %.c
 	$(CC) -c $< -o $o
-
-.PHONY: all clean
-
-clean:
-	rm -f $(OBJ( $(NAME)
